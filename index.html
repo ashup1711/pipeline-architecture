@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pipeline-Global — Delivery Pipeline Architecture</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f8fafc; color: #0f172a;
+           font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    header { padding: 28px 16px 8px; text-align: center; }
+    h1 { font-size: 20px; margin: 0 0 6px; }
+    p.sub { color: #64748b; font-size: 13px; margin: 0 auto; max-width: 780px; line-height: 1.5; }
+    main { display: flex; justify-content: center; padding: 14px 16px 28px; }
+    img { max-width: 100%; height: auto; background: #fff; border: 1px solid #e2e8f0;
+          border-radius: 12px; padding: 14px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+    footer { text-align: center; color: #94a3b8; font-size: 11px; padding-bottom: 28px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pipeline-Global — Fileless, RAG-First Delivery Pipeline</h1>
+    <p class="sub">An Orchestrator drives a 5-phase loop (Context &rarr; Allocate &rarr; Build &rarr; Verify &rarr; Gate);
+       subagents collaborate over a Redis state bus + shared pgvector RAG and an AST symbol index (toon maps).</p>
+  </header>
+  <main>
+    <img src="./pipeline-architecture.svg" alt="Pipeline-Global architecture diagram" />
+  </main>
+  <footer>Fileless by design — agents share state via Redis + TodoWrite and context via pgvector RAG + an AST symbol index; no files passed between phases.</footer>
+</body>
+</html>
