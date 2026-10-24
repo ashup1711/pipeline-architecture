@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 600" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
   <defs>
     <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L8,3 L0,6 Z" fill="#334155"/>
@@ -9,98 +9,123 @@
     <marker id="ahG" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse">
       <path d="M0,0 L8,3 L0,6 Z" fill="#10b981"/>
     </marker>
+    <filter id="ds" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
   </defs>
 
   <!-- background -->
-  <rect x="0" y="0" width="960" height="540" fill="#ffffff"/>
+  <rect x="0" y="0" width="1040" height="600" fill="#ffffff"/>
 
   <!-- title -->
-  <text x="480" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Pipeline-Global — Fileless, RAG-First Delivery Pipeline</text>
-  <text x="480" y="50" text-anchor="middle" font-size="12" fill="#64748b">Orchestrator drives a 5-phase loop; subagents collaborate over a Redis state bus + shared pgvector RAG and an AST symbol index (toon maps)</text>
+  <text x="520" y="28" text-anchor="middle" font-size="22" font-weight="700" fill="#0f172a">Pipeline-Global — Fileless, RAG-First Delivery Pipeline</text>
+  <text x="520" y="48" text-anchor="middle" font-size="12.5" fill="#64748b">Orchestrator drives a 5-phase loop; subagents collaborate over a Redis state bus + shared pgvector RAG and an AST symbol index (toon maps)</text>
 
-  <!-- ===================== CONTROL PLANE ===================== -->
-  <!-- Orchestrator -->
-  <rect x="380" y="78" width="200" height="52" rx="10" fill="#1e3a5f"/>
-  <text x="480" y="100" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Orchestrator</text>
-  <text x="480" y="118" text-anchor="middle" font-size="10" fill="#cbd5e1">phase router + dispatch</text>
-  <!-- control line to BUILD -->
-  <line x1="480" y1="130" x2="480" y2="196" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah)"/>
-  <text x="492" y="165" font-size="10" fill="#64748b">dispatches</text>
+  <!-- ===================== CONTROL PLANE BAND ===================== -->
+  <rect x="40" y="64" width="960" height="84" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="56" y="82" font-size="10" letter-spacing="1" fill="#94a3b8">CONTROL PLANE</text>
+  <rect x="440" y="84" width="200" height="52" rx="10" fill="#1e3a5f" filter="url(#ds)"/>
+  <text x="540" y="108" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Orchestrator</text>
+  <text x="540" y="126" text-anchor="middle" font-size="10" fill="#cbd5e1">phase router + dispatch</text>
 
-  <!-- ===================== DELIVERY LOOP ===================== -->
+  <!-- ===================== DELIVERY LOOP BAND ===================== -->
+  <rect x="40" y="164" width="960" height="184" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="56" y="182" font-size="10" letter-spacing="1" fill="#94a3b8">DELIVERY LOOP</text>
+
+  <!-- phase boxes -->
   <g>
-    <rect x="35"  y="196" width="150" height="68" rx="9" fill="#e8f0fe" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="110" y="224" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a5f">1 · CONTEXT</text>
-    <text x="110" y="246" text-anchor="middle" font-size="11" fill="#475569">explore</text>
+    <!-- 1 CONTEXT -->
+    <rect x="130" y="212" width="140" height="72" rx="10" fill="#e8f0fe" stroke="#3b82f6" stroke-width="1.5" filter="url(#ds)"/>
+    <circle cx="152" cy="234" r="12" fill="#3b82f6"/>
+    <text x="152" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">1</text>
+    <text x="204" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a5f">CONTEXT</text>
+    <text x="200" y="254" text-anchor="middle" font-size="10" fill="#475569">explore</text>
 
-    <rect x="220" y="196" width="150" height="68" rx="9" fill="#e8f0fe" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="295" y="224" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a5f">2 · ALLOCATE</text>
-    <text x="295" y="246" text-anchor="middle" font-size="11" fill="#475569">task-allocator</text>
+    <!-- 2 ALLOCATE -->
+    <rect x="300" y="212" width="140" height="72" rx="10" fill="#e8f0fe" stroke="#3b82f6" stroke-width="1.5" filter="url(#ds)"/>
+    <circle cx="322" cy="234" r="12" fill="#3b82f6"/>
+    <text x="322" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">2</text>
+    <text x="374" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a5f">ALLOCATE</text>
+    <text x="370" y="254" text-anchor="middle" font-size="10" fill="#475569">task-allocator</text>
 
-    <rect x="405" y="196" width="150" height="68" rx="9" fill="#e8f0fe" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="480" y="224" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a5f">3 · BUILD</text>
-    <text x="480" y="246" text-anchor="middle" font-size="11" fill="#475569">implementer(s)</text>
+    <!-- 3 BUILD -->
+    <rect x="470" y="212" width="140" height="72" rx="10" fill="#e8f0fe" stroke="#3b82f6" stroke-width="1.5" filter="url(#ds)"/>
+    <circle cx="492" cy="234" r="12" fill="#3b82f6"/>
+    <text x="492" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">3</text>
+    <text x="544" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a5f">BUILD</text>
+    <text x="540" y="254" text-anchor="middle" font-size="10" fill="#475569">implementer(s)</text>
 
-    <rect x="590" y="196" width="150" height="68" rx="9" fill="#e8f0fe" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="665" y="224" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a5f">4 · VERIFY</text>
-    <text x="665" y="246" text-anchor="middle" font-size="11" fill="#475569">verifier</text>
+    <!-- 4 VERIFY -->
+    <rect x="640" y="212" width="140" height="72" rx="10" fill="#e8f0fe" stroke="#3b82f6" stroke-width="1.5" filter="url(#ds)"/>
+    <circle cx="662" cy="234" r="12" fill="#3b82f6"/>
+    <text x="662" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">4</text>
+    <text x="714" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a5f">VERIFY</text>
+    <text x="710" y="254" text-anchor="middle" font-size="10" fill="#475569">verifier</text>
 
-    <rect x="775" y="196" width="150" height="68" rx="9" fill="#e8f0fe" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="850" y="224" text-anchor="middle" font-size="14" font-weight="700" fill="#1e3a5f">5 · GATE</text>
-    <text x="850" y="246" text-anchor="middle" font-size="11" fill="#475569">orchestrator closes</text>
+    <!-- 5 GATE -->
+    <rect x="810" y="212" width="140" height="72" rx="10" fill="#e8f0fe" stroke="#3b82f6" stroke-width="1.5" filter="url(#ds)"/>
+    <circle cx="832" cy="234" r="12" fill="#3b82f6"/>
+    <text x="832" y="238" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">5</text>
+    <text x="884" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a5f">GATE</text>
+    <text x="880" y="254" text-anchor="middle" font-size="10" fill="#475569">orchestrator closes</text>
   </g>
 
   <!-- forward arrows -->
   <g stroke="#334155" stroke-width="1.8" marker-end="url(#ah)">
-    <line x1="186" y1="230" x2="218" y2="230"/>
-    <line x1="371" y1="230" x2="403" y2="230"/>
-    <line x1="556" y1="230" x2="588" y2="230"/>
-    <line x1="741" y1="230" x2="773" y2="230"/>
+    <line x1="272" y1="248" x2="296" y2="248"/>
+    <line x1="442" y1="248" x2="466" y2="248"/>
+    <line x1="612" y1="248" x2="636" y2="248"/>
+    <line x1="782" y1="248" x2="806" y2="248"/>
   </g>
 
-  <!-- return / loop arrow (below boxes) -->
-  <path d="M850 264 L850 312 L110 312 L110 266" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#ahB)"/>
-  <text x="480" y="305" text-anchor="middle" font-size="11" font-weight="600" fill="#2563eb">&#8635; repeat loop</text>
+  <!-- return / loop arrow -->
+  <path d="M880 284 L880 322 L200 322 L200 286" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#ahB)"/>
+  <text x="540" y="316" text-anchor="middle" font-size="11" font-weight="600" fill="#2563eb">&#8635; repeat loop</text>
 
-  <!-- ===================== SUPPORT ROW A: state + tool surface ===================== -->
-  <!-- Redis Bus + TodoWrite -->
-  <rect x="35" y="344" width="280" height="56" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="175" y="368" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a5f">Redis Bus + TodoWrite</text>
-  <text x="175" y="387" text-anchor="middle" font-size="10.5" fill="#64748b">fileless state · events · leases · mirror</text>
-  <path d="M175 344 L175 150 L380 150 L380 130" fill="none" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ah)"/>
-  <text x="210" y="144" font-size="10" fill="#64748b">owns state</text>
+  <!-- ===================== SUPPORT & CONTEXT BAND ===================== -->
+  <rect x="40" y="364" width="960" height="196" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="56" y="382" font-size="10" letter-spacing="1" fill="#94a3b8">SUPPORT &amp; CONTEXT</text>
 
-  <!-- MCP Bridge -->
-  <rect x="645" y="344" width="280" height="56" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="785" y="368" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a5f">MCP Bridge (27 tools)</text>
-  <text x="785" y="387" text-anchor="middle" font-size="10.5" fill="#64748b">&#8594; zed-mcp · shared adapters</text>
-  <line x1="785" y1="344" x2="665" y2="264" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ah)"/>
-  <text x="702" y="330" font-size="10" fill="#64748b">tool surface</text>
+  <!-- Group A: state -->
+  <rect x="60" y="410" width="270" height="74" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5" filter="url(#ds)"/>
+  <text x="195" y="438" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a5f">Redis Bus + TodoWrite</text>
+  <text x="195" y="458" text-anchor="middle" font-size="10" fill="#64748b">fileless state · events · leases · mirror</text>
 
-  <!-- ===================== SUPPORT ROW B: Shared Context cluster ===================== -->
-  <rect x="230" y="416" width="500" height="88" rx="12" fill="#eef6ff" stroke="#93c5fd" stroke-width="1.5"/>
-  <text x="480" y="432" text-anchor="middle" font-size="11" font-weight="700" fill="#1e3a5f">Shared Context — retrieved via code_context</text>
+  <!-- Group C: tool surface -->
+  <rect x="710" y="410" width="270" height="74" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5" filter="url(#ds)"/>
+  <text x="845" y="438" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a5f">MCP Bridge (27 tools)</text>
+  <text x="845" y="458" text-anchor="middle" font-size="10" fill="#64748b">&#8594; zed-mcp · shared adapters</text>
 
-  <!-- pgvector RAG box -->
-  <rect x="248" y="444" width="190" height="46" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5"/>
-  <text x="343" y="464" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a5f">pgvector RAG</text>
-  <text x="343" y="481" text-anchor="middle" font-size="10" fill="#475569">code_context</text>
+  <!-- Group B: shared context cluster -->
+  <rect x="360" y="400" width="320" height="150" rx="12" fill="#eef6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="520" y="420" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1e3a5f">Shared Context — via code_context</text>
 
-  <!-- AST symbol index box (dedicated, highlighted) -->
-  <rect x="462" y="444" width="190" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-  <text x="557" y="464" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">AST symbol index</text>
-  <text x="557" y="481" text-anchor="middle" font-size="10" fill="#047857">toon maps</text>
+  <rect x="450" y="430" width="150" height="26" rx="7" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="525" y="447" text-anchor="middle" font-size="10" font-weight="700" fill="#065f46">index_codebase()</text>
+  <line x1="525" y1="456" x2="598" y2="476" stroke="#10b981" stroke-width="1.4" marker-end="url(#ahG)"/>
+  <text x="558" y="470" font-size="9" fill="#047857">builds</text>
 
-  <!-- index_codebase() producer node -->
-  <rect x="500" y="398" width="160" height="26" rx="7" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-  <text x="580" y="415" text-anchor="middle" font-size="10" font-weight="700" fill="#065f46">index_codebase()</text>
-  <line x1="580" y1="424" x2="557" y2="444" stroke="#10b981" stroke-width="1.4" marker-end="url(#ahG)"/>
-  <text x="600" y="438" font-size="9" fill="#047857">builds</text>
+  <rect x="372" y="476" width="140" height="46" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="442" y="496" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a5f">pgvector RAG</text>
+  <text x="442" y="512" text-anchor="middle" font-size="10" fill="#475569">code_context</text>
 
-  <!-- shared context connector up to BUILD -->
-  <line x1="480" y1="416" x2="480" y2="264" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ahB)"/>
-  <text x="500" y="340" font-size="10" fill="#2563eb">code_context (shared context)</text>
+  <rect x="528" y="476" width="140" height="46" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="598" y="496" text-anchor="middle" font-size="12" font-weight="700" fill="#065f46">AST symbol index</text>
+  <text x="598" y="512" text-anchor="middle" font-size="10" fill="#047857">toon maps</text>
+
+  <!-- connectors -->
+  <!-- state -> orchestrator (left gutter) -->
+  <path d="M90 410 L90 120 L440 120 L440 136" fill="none" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+  <text x="200" y="112" font-size="10" fill="#64748b">owns state</text>
+
+  <!-- tool surface -> VERIFY (right gutter) -->
+  <path d="M845 410 L975 410 L975 300 L780 300 L710 284" fill="none" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+  <text x="812" y="330" font-size="10" fill="#64748b">tool surface</text>
+
+  <!-- shared context -> BUILD -->
+  <line x1="540" y1="400" x2="540" y2="284" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ahB)"/>
+  <text x="560" y="346" font-size="10" fill="#2563eb">code_context (shared context)</text>
 
   <!-- footer -->
-  <text x="480" y="528" text-anchor="middle" font-size="11" fill="#64748b">Fileless by design — agents share state via Redis + TodoWrite and context via pgvector RAG + an AST symbol index (toon maps); no files passed between phases.</text>
+  <text x="520" y="584" text-anchor="middle" font-size="11" fill="#64748b">Fileless by design — agents share state via Redis + TodoWrite and context via pgvector RAG + an AST symbol index (toon maps); no files passed between phases.</text>
 </svg>
